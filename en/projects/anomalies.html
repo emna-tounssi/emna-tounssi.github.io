@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ThreatLens: detecting attacks in web server logs | Emna Tounssi</title>
+<meta name="description" content="Three months of website logs and not a single labelled attack: I built unsupervised detection of scans, brute-force attacks and bots, then ThreatLens, a…">
+<meta name="author" content="Emna Tounssi">
+<meta name="theme-color" content="#F6F7FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090E18" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232744C8'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EET%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="ThreatLens: detecting attacks in web server logs | Emna Tounssi">
+<meta property="og:description" content="Three months of website logs and not a single labelled attack: I built unsupervised detection of scans, brute-force attacks and bots, then ThreatLens, a…">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://emna-tounssi.github.io/en/projects/anomalies.html">
+<meta property="og:image" content="https://emna-tounssi.github.io/assets/apercu-en.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://emna-tounssi.github.io/en/projects/anomalies.html">
+<link rel="alternate" hreflang="fr" href="https://emna-tounssi.github.io/projects/anomalies.html">
+<link rel="alternate" hreflang="en" href="https://emna-tounssi.github.io/en/projects/anomalies.html">
+<link rel="alternate" hreflang="x-default" href="https://emna-tounssi.github.io/projects/anomalies.html">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-mark">ET</span>Emna Tounssi</a>
+    <nav class="nav" id="nav" aria-label="Main navigation"><ul><li><a href="../index.html#apropos">About</a></li><li><a href="../index.html#projets">Projects</a></li><li><a href="../index.html#methode">Approach</a></li><li><a href="../index.html#parcours">Experience</a></li><li><a href="../index.html#competences">Skills</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    <div class="tools-bar">
+      <div class="lang" role="group" aria-label="Language"><a href="../../projects/anomalies.html" hreflang="fr" lang="fr">FR</a><span aria-current="true">EN</span></div>
+      <button class="theme-btn" type="button" aria-label="Toggle theme"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="p-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../index.html#projets">Projects</a></nav>
+      <p class="card-meta"><span class="tag">Case study</span><span>Navitrends · remote engineering internship · July to August 2025</span></p>
+      <h1>ThreatLens: detecting attacks in web server logs</h1>
+      <p class="lead">Three months of website logs and not a single labelled attack: I built unsupervised detection of scans, brute-force attacks and bots, then ThreatLens, a Flask application that monitors traffic in near real time, locates every suspicious address and emails a PDF alert.</p>
+      <dl class="metrics"><div><dt>Logs analysed (92 files)</dt><dd>1.83 GB</dd></div><div><dt>F1, injected anomalies</dt><dd>0.92</dd></div><div><dt>Interface response time</dt><dd>< 200 ms</dd></div></dl>
+      <ul class="badges"><li>Python</li><li>scikit-learn</li><li>Isolation Forest</li><li>DBSCAN</li><li>t-SNE</li><li>Flask</li><li>SQLite</li><li>GeoLite2</li><li>Leaflet</li><li>ReportLab</li></ul>
+    </div>
+  </div>
+  <div class="wrap p-layout">
+    <aside class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#the-problem">The problem</a></li><li><a href="#what-the-data-shows">What the data shows</a></li><li><a href="#the-model">The model</a></li><li><a href="#validation-without-labels">Validation without labels</a></li><li><a href="#the-threatlens-application">The ThreatLens application</a></li><li><a href="#what-i-learned">What I learned</a></li><li><a href="#limits">Limits</a></li><li><a href="#confidentiality">Confidentiality</a></li></ol></aside>
+    <article>
+      <section class="p-sec" id="the-problem"><h2>The problem</h2><p>Navitrends, a digital solutions company, hosts websites that receive thousands of requests a day. Some come from vulnerability scans, mass login attempts or bots. Fixed rules (thresholds, signatures) miss new attacks and raise many false alarms.</p><p>Data: raw logs from May to July 2025, 92 files, 1.83 GB, with no labels at all. That called for an unsupervised method, then an honest way to validate it.</p></section><section class="p-sec" id="what-the-data-shows"><h2>What the data shows</h2><p>Exploratory analysis of the 10 most active addresses showed clear patterns: about 9,000 requests each, highly varied URLs (entropy close to 13) with a single declared browser (entropy 0), mostly 404 responses and repeated hits on admin or password pages. That is the signature of automated scanners. These findings guided the choice of features.</p><ol class="flow" aria-label="Data preparation"><li><strong>Parsing</strong><span>Regular expressions: IP, time, method, URL, HTTP code, browser, size</span></li><li><strong>Enrichment</strong><span>Sensitive URLs (login, admin), country and operator (GeoLite2)</span></li><li><strong>Aggregation</strong><span>Per IP address and per 5-minute window</span></li><li><strong>Features</strong><span>11 indicators: volumes, errors, entropies, sizes, changes</span></li><li><strong>Final dataset</strong><span>697,706 windows ready for the model</span></li></ol><ul><li>Volume: GET and POST request counts, response sizes.</li><li>Errors: 4xx and 5xx responses.</li><li>Diversity: Shannon entropy of URLs and declared browsers.</li><li>Security: number of sensitive URLs visited.</li><li>Dynamics: change from the previous window.</li></ul></section><section class="p-sec" id="the-model"><h2>The model</h2><ul><li><strong>Isolation Forest</strong> scores each window (100 trees, √N samples, fixed seed); the score is turned into an anomaly probability. I compared it with an autoencoder by cross-checking the addresses both flagged.</li><li><strong>DBSCAN</strong> then groups the anomalies into behaviour families, with a radius chosen from the k-nearest-neighbour distance curve (elbow near 0.565), so the analyst handles groups rather than one address at a time.</li><li><strong>Test on an unseen day</strong>: the logs of 12 August 2025, excluded from training.</li></ul><div class="tbl-wrap" role="region" aria-label="Anomaly families" tabindex="0"><table class="tbl"><thead><tr><th>Family found (12 August)</th><th>Addresses</th><th>Interpretation</th></tr></thead><tbody><tr><td>Many GETs, few POSTs</td><td>8</td><td>Site scraper or aggressive crawler</td></tr><tr><td>Many POSTs</td><td>14</td><td>Injection or spam attempts</td></tr><tr><td>Low volume, unusual behaviour</td><td>17</td><td>To investigate</td></tr><tr><td>Rotating browsers and sensitive URLs</td><td>4</td><td>Stealthy, targeted attack</td></tr></tbody></table></div><p class="note">Cluster quality: silhouette of 0.65 and Davies-Bouldin index of 0.45 on the GET/POST combination; 0.56 and 0.52 on the browsers/sensitive URLs combination.</p><div class="figs"><figure class="fig"><img src="../../assets/anomalies/tsne.png" alt="t-SNE projection of the anomaly families" loading="lazy"><figcaption>t-SNE projection of the 12 August anomalies, coloured by DBSCAN family</figcaption></figure><figure class="fig"><img src="../../assets/anomalies/scores.png" alt="Distribution of anomaly scores" loading="lazy"><figcaption>Distribution of Isolation Forest scores: the long left tail holds the anomalies</figcaption></figure></div><p class="note">The application and the charts are in French, the language of the internship.</p></section><section class="p-sec" id="validation-without-labels"><h2>Validation without labels</h2><p>With no ground truth, I validated in two complementary ways.</p><ul><li><strong>External threat database.</strong> The detected addresses were checked against CrowdSec, a collaborative database of malicious addresses: a large share were already listed for brute-force attacks or aggressive scans.</li><li><strong>Simulated set.</strong> 2,000 windows including 120 injected anomalies, so standard metrics could be computed.</li></ul><dl class="facts"><div><dt>Recall: anomalies found</dt><dd>100%</dd></div><div><dt>Precision of the alerts</dt><dd>85%</dd></div><div><dt>F1 score (anomalies)</dt><dd>0.92</dd></div><div><dt>Overall accuracy</dt><dd>89.5%</dd></div></dl><p class="note">Every injected anomaly is found, at the cost of some false alarms (15% of alerts). Injected anomalies are easier to spot than real attacks: these figures validate the method; they do not guarantee the same performance in production.</p></section><section class="p-sec" id="the-threatlens-application"><h2>The ThreatLens application</h2><p>A Flask web application for security analysts, connected to the model.</p><ul><li><strong>Continuous analysis</strong>: a PHP logger records the site's requests; a background process analyses them in batches of 100 and updates the dashboard.</li><li><strong>For the analyst</strong>: anomaly list, a page per address (country, city, operator), a Leaflet map, an alert threshold set by the admin, a PDF report by email (ReportLab, matplotlib).</li><li><strong>Securing the tool</strong>: sign-up approved by an admin, roles, hashed passwords, reset by a code sent by email.</li><li><strong>Performance</strong>: SQLite for history, in-memory ring buffers protected by a lock, a geolocation cache: interface responses under 200&nbsp;ms.</li></ul><p class="note">The application and the charts are in French, the language of the internship.</p></section><section class="p-sec" id="what-i-learned"><h2>What I learned</h2><p>The first addresses flagged were search engine crawlers: their behaviour is truly unusual, but not malicious. An anomaly is not an attack. This is why the tool shows the country and network operator of each address: the analyst can triage quickly, and the final decision stays with them.</p></section><section class="p-sec" id="limits"><h2>Limits</h2><p class="limit"><strong>False alarms.</strong> Legitimate bots show up as anomalies; an allow-list or a triage step is needed.</p><p class="limit"><strong>Indirect validation.</strong> The metrics come from injected anomalies, and the CrowdSec match was not quantified; an external database is not absolute proof.</p><p class="limit"><strong>Detection delay.</strong> 5-minute windows mean up to 5 minutes before an alert.</p><p class="limit"><strong>Deployment.</strong> The application was tested locally; production deployment on a server was the next step.</p></section><section class="p-sec" id="confidentiality"><h2>Confidentiality</h2><div class="notice"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><p>This work was done for a company. The code and data remain confidential: this page presents the approach, the validated results and charts from my internship report, with no screenshots of the tools.</p></div></section>
+      <nav class="pager" aria-label="Projects">
+        <a href="explain-my-model.html"><small>← Previous project</small>Explain My Model: automatic documentation of credit risk models</a>
+        <a class="next" href="agent.html"><small>Next project →</small>DataBot: your AI-powered data science assistant</a>
+      </nav>
+    </article>
+  </div>
+</main>
+<footer class="footer"><div class="wrap foot"><span>© 2026 Emna Tounssi</span><a href="mailto:emnatounssi@gmail.com">emnatounssi@gmail.com</a></div></footer>
+</body>
+</html>

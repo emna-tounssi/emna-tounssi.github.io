@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Détection de crises d'épilepsie sur signaux EEG | Emna Tounssi</title>
+<meta name="description" content="Un modèle Random Forest par patient, sur la base publique CHB-MIT. Filtrage du signal, caractéristiques temporelles, fréquentielles et dynamiques, sélection…">
+<meta name="author" content="Emna Tounssi">
+<meta name="theme-color" content="#F6F7FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090E18" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232744C8'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EET%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Détection de crises d'épilepsie sur signaux EEG | Emna Tounssi">
+<meta property="og:description" content="Un modèle Random Forest par patient, sur la base publique CHB-MIT. Filtrage du signal, caractéristiques temporelles, fréquentielles et dynamiques, sélection…">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://emna-tounssi.github.io/projects/eeg.html">
+<meta property="og:image" content="https://emna-tounssi.github.io/assets/apercu-fr.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://emna-tounssi.github.io/projects/eeg.html">
+<link rel="alternate" hreflang="fr" href="https://emna-tounssi.github.io/projects/eeg.html">
+<link rel="alternate" hreflang="en" href="https://emna-tounssi.github.io/en/projects/eeg.html">
+<link rel="alternate" hreflang="x-default" href="https://emna-tounssi.github.io/projects/eeg.html">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script src="../site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-mark">ET</span>Emna Tounssi</a>
+    <nav class="nav" id="nav" aria-label="Navigation principale"><ul><li><a href="../index.html#apropos">À propos</a></li><li><a href="../index.html#projets">Projets</a></li><li><a href="../index.html#methode">Méthode</a></li><li><a href="../index.html#parcours">Parcours</a></li><li><a href="../index.html#competences">Compétences</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    <div class="tools-bar">
+      <div class="lang" role="group" aria-label="Langue"><span aria-current="true">FR</span><a href="../en/projects/eeg.html" hreflang="en" lang="en">EN</a></div>
+      <button class="theme-btn" type="button" aria-label="Changer de thème"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="p-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="breadcrumb"><a href="../index.html">Accueil</a><span>/</span><a href="../index.html#projets">Projets</a></nav>
+      <p class="card-meta"><span>Projet de 2e année (PFA), ENIT, en binôme · 2025</span></p>
+      <h1>Détection de crises d'épilepsie sur signaux EEG</h1>
+      <p class="lead">Un modèle Random Forest par patient, sur la base publique CHB-MIT. Filtrage du signal, caractéristiques temporelles, fréquentielles et dynamiques, sélection des canaux avec Boruta, et seuil de décision réglé pour ne pas rater de crise.</p>
+      <dl class="metrics"><div><dt>Rappel</dt><dd>95,3&nbsp;%</dd></div><div><dt>Précision</dt><dd>99,5&nbsp;%</dd></div><div><dt>Crises détectées</dt><dd>31 / 32</dd></div></dl>
+      <ul class="badges"><li>Python</li><li>MNE</li><li>scikit-learn</li><li>imbalanced-learn</li><li>Random Forest</li><li>Boruta</li><li>ondelettes</li></ul>
+    </div>
+  </div>
+  <div class="wrap p-layout">
+    <aside class="toc" aria-label="Sommaire"><p>Sommaire</p><ol><li><a href="#le-probleme">Le problème</a></li><li><a href="#ma-demarche">Ma démarche</a></li><li><a href="#resultats">Résultats</a></li><li><a href="#limites">Limites</a></li></ol></aside>
+    <article>
+      <section class="p-sec" id="le-probleme"><h2>Le problème</h2><p>Repérer automatiquement les crises d'épilepsie dans des enregistrements EEG de 23 canaux. Rater une crise coûte plus cher qu'une fausse alerte : le rappel compte donc plus que la précision seule.</p></section><section class="p-sec" id="ma-demarche"><h2>Ma démarche</h2><ol class="flow" aria-label="Étapes du traitement"><li><strong>Filtrage</strong><span>Coupe-bande 50&nbsp;Hz, passe-bande 0,5 à 30&nbsp;Hz, référence moyenne commune</span></li><li><strong>Fenêtres</strong><span>4&nbsp;s avec un pas de 1&nbsp;s, étiquetées crise si plus de 60&nbsp;% chevauchent une crise</span></li><li><strong>Caractéristiques</strong><span>Temps, fréquence, ondelettes et dynamique non linéaire</span></li><li><strong>Canaux</strong><span>Boruta garde les canaux utiles pour chaque patient</span></li><li><strong>Modèle</strong><span>Random Forest par patient, seuil réglé pour le rappel</span></li></ol><ul><li>Caractéristiques temporelles : variance, kurtosis, écart interquartile, longueur de ligne, mobilité de Hjorth.</li><li>Caractéristiques fréquentielles : puissance par bande, ondelettes discrètes (db4) et continues (Morlet).</li><li>Dynamique du signal : entropies de Shannon et de permutation, exposant de Hurst, dimension de corrélation.</li><li>Un modèle par patient, car la forme d'une crise varie beaucoup d'une personne à l'autre.</li></ul></section><section class="p-sec" id="resultats"><h2>Résultats</h2><dl class="facts"><div><dt>Précision</dt><dd>99,5&nbsp;%</dd></div><div><dt>Rappel</dt><dd>95,3&nbsp;%</dd></div><div><dt>Score F1</dt><dd>97,5&nbsp;%</dd></div><div><dt>Exactitude</dt><dd>96,63&nbsp;%</dd></div><div><dt>Latence moyenne</dt><dd>1,85&nbsp;s</dd></div><div><dt>Fausses détections</dt><dd>2,29&nbsp;%</dd></div><div><dt>Crises détectées</dt><dd>31 / 32</dd></div><div><dt>Patients</dt><dd>24</dd></div></dl><p class="note">Valeurs moyennes sur les 24 patients. Sur les 32 crises du jeu de test, une seule n'a pas été détectée (patient 15). La latence est le temps entre le début de la crise et sa détection.</p><div class="figs"><figure class="fig"><img src="../assets/eeg/fig-001.png" alt="Précision par patient" loading="lazy"><figcaption>Précision par patient</figcaption></figure><figure class="fig"><img src="../assets/eeg/fig-002.png" alt="Rappel par patient" loading="lazy"><figcaption>Rappel par patient</figcaption></figure><figure class="fig"><img src="../assets/eeg/fig-003.png" alt="Score F1 par patient" loading="lazy"><figcaption>Score F1 par patient</figcaption></figure><figure class="fig"><img src="../assets/eeg/fig-004.png" alt="Crises testées et crises détectées par patient" loading="lazy"><figcaption>Crises testées et crises détectées par patient</figcaption></figure><figure class="fig"><img src="../assets/eeg/fig-005.png" alt="Latence moyenne de détection par patient" loading="lazy"><figcaption>Latence moyenne de détection par patient, en secondes</figcaption></figure><figure class="fig"><img src="../assets/eeg/fig-000.png" alt="Vrais positifs avant et après la sélection des canaux" loading="lazy"><figcaption>Vrais positifs avant et après la sélection des canaux</figcaption></figure></div></section><section class="p-sec" id="limites"><h2>Limites</h2><p class="limit">Un modèle par patient, évalué sur des fichiers contenant des crises : les résultats ne se généralisent pas tels quels à un enregistrement continu ni à un nouveau patient.</p><p class="limit">Le jeu de test contient peu de crises par patient (de 1 à 4) : le rappel repose donc sur un petit nombre d'événements.</p><p class="limit">Les fausses détections varient selon les patients : jusqu'à 9,5&nbsp;% pour le patient 13.</p></section>
+      <nav class="pager" aria-label="Projets">
+        <a href="emotion.html"><small>← Projet précédent</small>Reconnaissance des émotions faciales en temps réel</a>
+        <a class="next" href="explain-my-model.html"><small>Projet suivant →</small>Explain My Model : documenter automatiquement des modèles de risque de crédit</a>
+      </nav>
+    </article>
+  </div>
+</main>
+<footer class="footer"><div class="wrap foot"><span>© 2026 Emna Tounssi</span><a href="mailto:emnatounssi@gmail.com">emnatounssi@gmail.com</a></div></footer>
+</body>
+</html>

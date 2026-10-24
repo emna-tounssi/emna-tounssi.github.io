@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epileptic seizure detection from EEG signals | Emna Tounssi</title>
+<meta name="description" content="One Random Forest model per patient, on the public CHB-MIT database. Signal filtering, time, frequency and dynamic features, channel selection with Boruta,…">
+<meta name="author" content="Emna Tounssi">
+<meta name="theme-color" content="#F6F7FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090E18" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232744C8'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EET%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Epileptic seizure detection from EEG signals | Emna Tounssi">
+<meta property="og:description" content="One Random Forest model per patient, on the public CHB-MIT database. Signal filtering, time, frequency and dynamic features, channel selection with Boruta,…">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://emna-tounssi.github.io/en/projects/eeg.html">
+<meta property="og:image" content="https://emna-tounssi.github.io/assets/apercu-en.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://emna-tounssi.github.io/en/projects/eeg.html">
+<link rel="alternate" hreflang="fr" href="https://emna-tounssi.github.io/projects/eeg.html">
+<link rel="alternate" hreflang="en" href="https://emna-tounssi.github.io/en/projects/eeg.html">
+<link rel="alternate" hreflang="x-default" href="https://emna-tounssi.github.io/projects/eeg.html">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-mark">ET</span>Emna Tounssi</a>
+    <nav class="nav" id="nav" aria-label="Main navigation"><ul><li><a href="../index.html#apropos">About</a></li><li><a href="../index.html#projets">Projects</a></li><li><a href="../index.html#methode">Approach</a></li><li><a href="../index.html#parcours">Experience</a></li><li><a href="../index.html#competences">Skills</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    <div class="tools-bar">
+      <div class="lang" role="group" aria-label="Language"><a href="../../projects/eeg.html" hreflang="fr" lang="fr">FR</a><span aria-current="true">EN</span></div>
+      <button class="theme-btn" type="button" aria-label="Toggle theme"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="p-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../index.html#projets">Projects</a></nav>
+      <p class="card-meta"><span>Second-year engineering project, ENIT, in a pair · 2025</span></p>
+      <h1>Epileptic seizure detection from EEG signals</h1>
+      <p class="lead">One Random Forest model per patient, on the public CHB-MIT database. Signal filtering, time, frequency and dynamic features, channel selection with Boruta, and a decision threshold tuned so that seizures are not missed.</p>
+      <dl class="metrics"><div><dt>Recall</dt><dd>95.3%</dd></div><div><dt>Precision</dt><dd>99.5%</dd></div><div><dt>Seizures detected</dt><dd>31 / 32</dd></div></dl>
+      <ul class="badges"><li>Python</li><li>MNE</li><li>scikit-learn</li><li>imbalanced-learn</li><li>Random Forest</li><li>Boruta</li><li>wavelets</li></ul>
+    </div>
+  </div>
+  <div class="wrap p-layout">
+    <aside class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#the-problem">The problem</a></li><li><a href="#my-approach">My approach</a></li><li><a href="#results">Results</a></li><li><a href="#limits">Limits</a></li></ol></aside>
+    <article>
+      <section class="p-sec" id="the-problem"><h2>The problem</h2><p>Automatically spot epileptic seizures in 23-channel EEG recordings. Missing a seizure costs more than a false alarm, so recall matters more than precision alone.</p></section><section class="p-sec" id="my-approach"><h2>My approach</h2><ol class="flow" aria-label="Processing steps"><li><strong>Filtering</strong><span>50&nbsp;Hz notch, 0.5 to 30&nbsp;Hz band-pass, common average reference</span></li><li><strong>Windows</strong><span>4&nbsp;s with a 1&nbsp;s step, labelled seizure if over 60% overlaps a seizure</span></li><li><strong>Features</strong><span>Time, frequency, wavelets and non-linear dynamics</span></li><li><strong>Channels</strong><span>Boruta keeps the useful channels for each patient</span></li><li><strong>Model</strong><span>Random Forest per patient, threshold tuned for recall</span></li></ol><ul><li>Time features: variance, kurtosis, interquartile range, line length, Hjorth mobility.</li><li>Frequency features: band power, discrete (db4) and continuous (Morlet) wavelets.</li><li>Signal dynamics: Shannon and permutation entropy, Hurst exponent, correlation dimension.</li><li>One model per patient, because what a seizure looks like varies a lot from one person to another.</li></ul></section><section class="p-sec" id="results"><h2>Results</h2><dl class="facts"><div><dt>Precision</dt><dd>99.5%</dd></div><div><dt>Recall</dt><dd>95.3%</dd></div><div><dt>F1 score</dt><dd>97.5%</dd></div><div><dt>Accuracy</dt><dd>96.63%</dd></div><div><dt>Mean latency</dt><dd>1.85&nbsp;s</dd></div><div><dt>False detections</dt><dd>2.29%</dd></div><div><dt>Seizures detected</dt><dd>31 / 32</dd></div><div><dt>Patients</dt><dd>24</dd></div></dl><p class="note">Averages over the 24 patients. Of the 32 seizures in the test set, only one was missed (patient 15). Latency is the time between the start of the seizure and its detection.</p><div class="figs"><figure class="fig"><img src="../../assets/eeg/fig-001.png" alt="Precision per patient" loading="lazy"><figcaption>Precision per patient</figcaption></figure><figure class="fig"><img src="../../assets/eeg/fig-002.png" alt="Recall per patient" loading="lazy"><figcaption>Recall per patient</figcaption></figure><figure class="fig"><img src="../../assets/eeg/fig-003.png" alt="F1 score per patient" loading="lazy"><figcaption>F1 score per patient</figcaption></figure><figure class="fig"><img src="../../assets/eeg/fig-004.png" alt="Seizures tested and detected per patient" loading="lazy"><figcaption>Seizures tested and detected per patient</figcaption></figure><figure class="fig"><img src="../../assets/eeg/fig-005.png" alt="Mean detection latency per patient" loading="lazy"><figcaption>Mean detection latency per patient, in seconds</figcaption></figure><figure class="fig"><img src="../../assets/eeg/fig-000.png" alt="True positives before and after channel selection" loading="lazy"><figcaption>True positives before and after channel selection</figcaption></figure></div><p class="note">The chart labels are in French, the language of the original project.</p></section><section class="p-sec" id="limits"><h2>Limits</h2><p class="limit">One model per patient, evaluated on files that contain seizures: the results do not carry over as-is to a continuous recording or to a new patient.</p><p class="limit">The test set holds few seizures per patient (1 to 4): recall therefore rests on a small number of events.</p><p class="limit">False detections vary across patients: up to 9.5% for patient 13.</p></section>
+      <nav class="pager" aria-label="Projects">
+        <a href="emotion.html"><small>← Previous project</small>Real-time facial emotion recognition</a>
+        <a class="next" href="explain-my-model.html"><small>Next project →</small>Explain My Model: automatic documentation of credit risk models</a>
+      </nav>
+    </article>
+  </div>
+</main>
+<footer class="footer"><div class="wrap foot"><span>© 2026 Emna Tounssi</span><a href="mailto:emnatounssi@gmail.com">emnatounssi@gmail.com</a></div></footer>
+</body>
+</html>
