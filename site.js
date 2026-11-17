@@ -15,6 +15,11 @@
     });
   }
 
+  // Language switch: the visitor's choice is remembered (the page head applies it on the next visit)
+  document.querySelectorAll('.lang a[hreflang]').forEach(function (a) {
+    a.addEventListener('click', function () { try { localStorage.setItem('lang', a.getAttribute('hreflang')); } catch (e) {} });
+  });
+
   // Mobile menu
   var menu = document.querySelector('.menu-btn');
   var nav = document.querySelector('.nav');

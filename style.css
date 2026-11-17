@@ -355,3 +355,16 @@ a:hover { text-decoration-thickness: 2px; }
 .tbl tr:last-child td { border-bottom: 0; }
 .tbl td strong { color: var(--ink); }
 .p-sec h3 { font-size: 1.05rem; margin: 22px 0 10px; letter-spacing: -0.01em; }
+
+/* Services (home): three cards, each linked to its projects */
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.service { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.service .ico { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); }
+.service .ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.service h3 { font-size: 1.12rem; margin: 6px 0 0; }
+.service p { color: var(--muted); font-size: .95rem; margin: 0; }
+.service .ex { margin-top: auto; padding-top: 6px; font-size: .88rem; font-weight: 600; color: var(--ink-2); }
+@media (max-width: 900px) { .services { grid-template-columns: minmax(0, 1fr); } }
+
+/* Project cards: what the project does for the user, in one plain sentence, above the description */
+.card-body > p.card-lead { color: var(--ink); font-size: 1rem; font-weight: 500; line-height: 1.5; margin-bottom: 10px; }
