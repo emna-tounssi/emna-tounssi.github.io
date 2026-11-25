@@ -46,7 +46,7 @@
       <nav class="crumbs" aria-label="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../index.html#projets">Projects</a></nav>
       <p class="card-meta"><span>Personal project · computer vision · 2026</span></p>
       <h1>Real-time facial emotion recognition</h1>
-      <p class="lead">A deep learning model that recognises 7 emotions on every face in a video, faster than the video itself. Before training, I cleaned the reference dataset, which held thousands of duplicates and images shared between training and test: the published score is measured on a clean test set.</p>
+      <p class="lead">A deep learning model that recognises 7 emotions on every face in a video, faster than the video itself. Before training, I cleaned the reference dataset, which held thousands of duplicates and images shared between training and test: the published score is measured on a clean test set. 82.7% accuracy on the clean test set, but 60% balanced accuracy: rare emotions like disgust and fear are still mostly missed.</p>
       <dl class="metrics"><div><dt>Accuracy, clean test set</dt><dd>82.7%</dd></div><div><dt>Right emotion in the top 2</dt><dd>95.5%</dd></div><div><dt>Speed on CPU only</dt><dd>49 fps</dd></div></dl>
       <ul class="badges"><li>PyTorch</li><li>ResNet-18</li><li>transfer learning</li><li>OpenCV</li><li>YuNet</li><li>scikit-learn</li></ul>
     </div>
